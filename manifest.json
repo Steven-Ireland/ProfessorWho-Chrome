@@ -18,7 +18,7 @@
     "persistent": false
   },
   "permissions": [
-    "http://*/"
+    "http://commote.net/"
   ],
   
   "manifest_version": 2

@@ -4,7 +4,7 @@ $("abbr[title*='Primary']").each(function(obj) {
 	var profname = prof.text().substring(0, prof.text().indexOf(" ")) + prof.text().substring(prof.text().lastIndexOf("  ")+1, prof.text().lastIndexOf(" "));
 	profname = encodeURI(profname);
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', "http://192.168.1.107:8081/scrape?"+"p="+profname, true );
+	xhr.open('GET', "http://commote.net:8081/scrape?"+"p="+profname, true );
 	xhr.setRequestHeader('content-type', 'text/plain');
 	xhr.onload = function() {
 		var json = JSON.parse(xhr.responseText);
