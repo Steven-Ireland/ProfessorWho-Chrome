@@ -5,18 +5,19 @@
   "permissions": [
     "activeTab"
   ],
-  "content_scripts": [ {
-    "js": [ "jquery-2.1.1.min.js", "background.js" ],
-    "matches": [ "http://bannerweb.wpi.edu/*", "https://*/*"],
-	"run-at": "document_idle"
-  }],
+  "web_accessible_resources": ["jquery-2.1.1.min.js"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["jquery-2.1.1.min.js"],
     "persistent": false
   },
+  "content_scripts": [ {
+    "js": [ "jquery-2.1.1.min.js", "background.js" ],
+    "matches": [ "*://bannerweb.wpi.edu/*" ],
+	"run-at": "document_idle"
+  }],
   "permissions": [
     "http://commote.net/"
   ],
-  
+
   "manifest_version": 2
 }
