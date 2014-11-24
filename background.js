@@ -10,10 +10,10 @@ $("abbr[title*='Primary']").each(function(obj) {
 		var json = JSON.parse(xhr.responseText);
 		prof.css("background-color", getRatingColor(json.overall));
 	};
-	
+
 	xhr.send(null);
 
-	
+
 });
 
 
@@ -26,6 +26,6 @@ function getRatingColor(num) {
 		return "#FFFF00";
 	else if (num<4)
 		return "7FFF00";
-	else 
+	else
 		return "00FF00";
 }
