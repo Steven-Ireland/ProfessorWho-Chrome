@@ -1,3 +1,7 @@
+var ratings = {};
+
+
+
 $("abbr[title*='Primary']").each(function(obj) {
 	var prof = $(this).parent();
 	// get first and last name
@@ -7,11 +11,10 @@ $("abbr[title*='Primary']").each(function(obj) {
 	var xhr = new XMLHttpRequest(); // create the request
 	xhr.open('GET', "http://localhost:8082/scrape?"+"p="+profname, true );
 	xhr.setRequestHeader('content-type', 'text/plain');
-	xhr.onload = function() { // on response
+	xhr.onload = function() {
 		var json = JSON.parse(xhr.responseText);
-		ratings[origName] = json;		
+		console.log(json.overall+" "+profname);
 		prof.css("background-color", getRatingColor(json.overall));
-		prof.on(
 	};
 
 	xhr.send(null);
