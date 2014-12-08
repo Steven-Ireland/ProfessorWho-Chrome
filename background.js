@@ -5,13 +5,11 @@ $("abbr[title*='Primary']").each(function(obj) {
 	var profname = encodeURI(origName);
 
 	var xhr = new XMLHttpRequest(); // create the request
-	xhr.open('GET', "https://localhost:8081/scrape?"+"p="+profname, true );
+	xhr.open('GET', "https://commote.net:8081/scrape?"+"p="+profname, true );
 	xhr.setRequestHeader('content-type', 'text/plain');
 	xhr.onload = function() { // on response
-		var json = JSON.parse(xhr.responseText);
-		ratings[origName] = json;		
+		var json = JSON.parse(xhr.responseText);	
 		prof.css("background-color", getRatingColor(json.overall));
-		prof.on(
 	};
 
 	xhr.send(null);
