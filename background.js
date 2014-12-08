@@ -5,7 +5,7 @@ $("abbr[title*='Primary']").each(function(obj) {
 	var profname = encodeURI(origName);
 
 	var xhr = new XMLHttpRequest(); // create the request
-	xhr.open('GET', "http://localhost:8082/scrape?"+"p="+profname, true );
+	xhr.open('GET', "https://localhost:8081/scrape?"+"p="+profname, true );
 	xhr.setRequestHeader('content-type', 'text/plain');
 	xhr.onload = function() { // on response
 		var json = JSON.parse(xhr.responseText);
