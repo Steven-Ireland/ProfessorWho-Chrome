@@ -11,6 +11,16 @@ $("abbr[title*='Primary']").each(function(obj) {
 	xhr.onload = function() { // on response
 		var json = JSON.parse(xhr.responseText);	
 		prof.css("background-color", getRatingColor(json.overall));
+		if (json.overall!=0 && json.overall!="")
+			Tipped.create(prof, function() {
+				return {
+					title: profname,
+					content: 	'Overall Rating: '+json.overall+'<br>'+
+								'Helpfulness: '+json.helpfulness+'<br>'+
+								'Clarity: '+json.clarity+'<br>'+
+								'Easiness: '+json.easiness+'<br>'
+				};
+			}, {position: 'righttop'});
 	};
 
 	xhr.send(null);

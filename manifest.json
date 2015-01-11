@@ -5,13 +5,14 @@
   "permissions": [
     "activeTab"
   ],
-  "web_accessible_resources": ["jquery-2.1.1.min.js"],
+  "web_accessible_resources": ["jquery-2.1.1.min.js", "tooltip/*/*"],
   "background": {
-    "scripts": ["jquery-2.1.1.min.js"],
+    "scripts": ["jquery-2.1.1.min.js", "tooltip/js/tipped/tipped.js"],
     "persistent": false
   },
   "content_scripts": [ {
-    "js": [ "jquery-2.1.1.min.js", "background.js" ],
+    "js": [ "jquery-2.1.1.min.js", "tooltip/js/tipped/tipped.js", "background.js" ],
+	"css": ["tooltip/css/tipped/tipped.css"],
     "matches": [ "*://bannerweb.wpi.edu/*" ],
 	"run-at": "document_idle"
   }],
