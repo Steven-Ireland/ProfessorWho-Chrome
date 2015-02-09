@@ -15,7 +15,7 @@
 	border-spacing: 2px;
 }
 
-th.ddheader, td .dddefault{
+table th.ddheader, table td.dddefault {
 	padding-right: 10px;
 }
 

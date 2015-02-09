@@ -2,7 +2,15 @@ $("abbr[title='Primary']").each(function(obj) {
 	var prof = $(this).parent();
 	// get first and last name
 	var profname = prof.text().substring(0, prof.text().indexOf(" ")) + prof.text().substring(prof.text().lastIndexOf("  ")+1, prof.text().lastIndexOf(" "));
-	var comProfname = prof.find("a").attr("target");
+	
+	var comProfname = prof.find("a");
+	if (comProfname.size() < 1) {
+		comProfname =prof.text().substring(0, prof.text().indexOf("(")-1).replace(/  /g, " ");
+	}
+	else {
+		comProfname = comProfname.attr("target");
+	}
+	
 	var encodedprofname = profname+" worcester polytechnic institute";
 	encodedprofname = encodeURI(profname);
 	var firstDone = false;
