@@ -1,18 +1,18 @@
 {
   "name": "WPI Who's My Professor",
   "description": "Highlight bannerweb professors based on ratemyprofessor rating",
-  "version": "2.1.3",
+  "version": "2.2",
   "permissions": [
     "activeTab"
   ],
-  "web_accessible_resources": ["jquery-2.1.1.min.js", "tooltip/*/*"],
+  "web_accessible_resources": ["jquery-2.1.1.min.js", "bootstrap.js", "charts.js"],
   "background": {
-    "scripts": ["jquery-2.1.1.min.js", "tooltip/js/tipped/tipped.js"],
+    "scripts": ["jquery-2.1.1.min.js", "bootstrap.js", "charts.js"],
     "persistent": false
   },
   "content_scripts": [ {
-    "js": [ "jquery-2.1.1.min.js", "tooltip/js/tipped/tipped.js", "background.js" ],
-	"css": ["tooltip/css/tipped/tipped.css"],
+    "js": [ "jquery-2.1.1.min.js", "bootstrap.js", "charts.js", "background.js" ],
+	"css": ["bootstrap.css", "custom.css"],
     "matches": [ "*://bannerweb.wpi.edu/*" ],
 	"run-at": "document_idle"
   }],

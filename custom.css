@@ -1,0 +1,32 @@
+.tooltip-inner {
+	background-color: #eee;
+	opacity: 1;
+	color: #222;
+	max-width:500px;
+	text-align: left;
+	padding-left: 15px;
+}
+
+.tooltip.in {
+	opacity: 1;
+}
+
+.datadisplaytable {
+	border-spacing: 2px;
+}
+
+th.ddheader, td .dddefault{
+	padding-right: 10px;
+}
+
+.rating {
+	color: blue;
+}
+
+.err {
+	color: red;
+}
+
+canvas {
+	padding-right: 15px;
+}
